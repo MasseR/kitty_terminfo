@@ -24,7 +24,7 @@ This can be used in your nixos configuration flake with something like this:
       modules = [
         ({ pkgs, ... }: {
           system.configurationRevision = nixpkgs.lib.mkIf (sef ? rev) self.rev;
-          overlays = self.overlays;
+          nixpkgs.overlays = self.overlays;
           environment.systemPackages = [
             kitty_terminfo
           ];
